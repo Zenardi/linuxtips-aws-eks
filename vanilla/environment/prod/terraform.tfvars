@@ -22,3 +22,14 @@ ssm_pod_subnets = [
 ]
 
 k8s_version = "1.31"
+
+auto_scale_options = {
+  min     = 2
+  max     = 10
+  desired = 2
+}
+
+nodes_instance_sizes = [
+  "t3.large",
+  "t3a.large"
+]
