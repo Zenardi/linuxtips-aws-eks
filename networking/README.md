@@ -65,3 +65,19 @@ No modules.
 | <a name="output_public_subnets"></a> [public\_subnets](#output\_public\_subnets) | SSM Parameters com os valores dos ID's das Subnets Públicas |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | SSM Parameter com o valor do vpc\_id |
 <!-- END_TF_DOCS -->
+
+# Desafios
+1. Modularização
+Converta o código que vocês criaram em um módulo de Terraform. Um módulo bem estruturado é fundamental para reaproveitamento e padronização em múltiplos projetos. Façam esse exercício para tentar "produtizar" a criação de networkings na AWS sob demanda.
+
+2. Documentação
+Crie uma documentação clara e objetiva sobre como utilizar o módulo que você desenvolveu. Sugestão é usar o Terraform Docs
+
+3. Mais parametrizações
+Torne seu módulo mais flexível, adicionando variáveis que permitam configurações personalizadas de coisas que deixamos mockados ou com valores pré-definidos. Pense em parâmetros como CIDR blocks, tags, regras de segurança e outras configurações importantes.
+
+4. Produtização das Regras de NACL's
+Refine as regras de NACL (Network Access Control Lists) para torná-las mais completas e alinhadas com as boas práticas de segurança. Garanta que as regras sejam fáceis de entender e reutilizar.
+
+5. Visualização da Arquitetura
+Desenhe a arquitetura de rede criada usando a ferramenta da sua preferência. Isso ajudará a visualizar os componentes e a comunicar melhor sua solução.
