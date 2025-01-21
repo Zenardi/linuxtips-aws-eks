@@ -19,3 +19,8 @@ cd vanilla
 terraform plan -var-file="environment/prod/terraform.tfvars" -out eks.plan
 terraform apply eks.plan
 ```
+
+# Connect to EKS
+```shell
+aws eks update-kubeconfig --region us-east-1 --name linuxtips-cluster
+```
