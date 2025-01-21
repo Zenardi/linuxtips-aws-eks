@@ -12,4 +12,10 @@ source .env
 cd networking
 terraform plan -var-file="environment/prod/terraform.tfvars" -out networking.plan
 terraform apply networking.plan
+
+cd ..
+
+cd vanilla
+terraform plan -var-file="environment/prod/terraform.tfvars" -out eks.plan
+terraform apply eks.plan
 ```
