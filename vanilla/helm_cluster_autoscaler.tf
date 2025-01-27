@@ -30,7 +30,7 @@ resource "helm_release" "cluster_autoscaler" {
 
   set {
     name  = "autoscalingGroups[0].name"
-    value = aws_eks_node_group.main.resources[0].autoscaling_groups[0].name
+    value = aws_eks_fargate_profile.wildcard.resources[0].autoscaling_groups[0].name
   }
 
   set {
@@ -45,6 +45,6 @@ resource "helm_release" "cluster_autoscaler" {
 
   depends_on = [
     aws_eks_cluster.main,
-    aws_eks_node_group.main,
+    aws_eks_fargate_profile.wildcard,
   ]
 }
