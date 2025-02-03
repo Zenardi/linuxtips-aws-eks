@@ -66,3 +66,16 @@ variable "custom_ami" {
   description = "AMI ID customizada para os nodes"
   default     = "ami-01d396130bcd204a1"
 }
+
+variable "karpenter_capacity" {
+  type = list(object({
+    name               = string
+    workload           = string
+    ami_family         = string
+    ami_ssm            = string
+    instance_family    = list(string)
+    instance_sizes     = list(string)
+    capacity_type      = list(string)
+    availability_zones = list(string)
+  }))
+}

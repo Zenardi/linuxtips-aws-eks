@@ -33,3 +33,18 @@ nodes_instance_sizes = [
   "t3.large",
   "t3a.large"
 ]
+
+# /aws/service/eks/optimized-ami/1.31/x86_64/standard/recommended/image_id
+
+karpenter_capacity = [{
+  name       = "linuxtips-capacity"
+  workload   = "linuxtips-workload"
+  ami_family = "AL2023"
+  ami_ssm    = "/aws/service/eks/optimized-ami/1.31/amazon-linux-2023/x86_64/standard/recommended/image_id"
+  instance_family = [
+    "t3", "t3a"
+  ]
+  instance_sizes     = ["large", "xlarge"]
+  capacity_type      = ["spot"]
+  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}]
