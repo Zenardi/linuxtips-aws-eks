@@ -45,4 +45,45 @@ karpenter_capacity = [{
   instance_sizes     = ["large", "xlarge"]
   capacity_type      = ["spot", "on-demand"]
   availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
-}]
+  },
+  {
+    name               = "chip-capacity"
+    workload           = "chip"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "t3a"]
+    instance_sizes     = ["large", "xlarge"]
+    capacity_type      = ["spot"]
+    availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  },
+  {
+    name               = "critical-capacity"
+    workload           = "critical"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "t3a"]
+    instance_sizes     = ["large", "xlarge"]
+    capacity_type      = ["on-demand"]
+    availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  },
+  {
+    name               = "soft-capacity"
+    workload           = "soft"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "t3a"]
+    instance_sizes     = ["large", "xlarge"]
+    capacity_type      = ["spot"]
+    availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  },
+  {
+    name               = "general-capacity"
+    workload           = "general"
+    ami_family         = "Bottlerocket"
+    ami_ssm            = "/aws/service/bottlerocket/aws-k8s-1.31/x86_64/latest/image_id"
+    instance_family    = ["t3", "t3a"]
+    instance_sizes     = ["large", "xlarge"]
+    capacity_type      = ["spot", "on-demand"]
+    availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  },
+]

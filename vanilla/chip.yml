@@ -24,7 +24,7 @@ spec:
     spec:
 
       nodeSelector:
-        karpenter.sh/nodepool: soft
+        karpenter.sh/nodepool: chip-capacity
 
       topologySpreadConstraints:
       - maxSkew: 1
