@@ -1,9 +1,13 @@
 resource "aws_eks_node_group" "main" {
+
   cluster_name    = aws_eks_cluster.main.id
-  node_group_name = format("%s-on-demand", aws_eks_cluster.main.id)
-  node_role_arn   = aws_iam_role.eks_nodes_role.arn
-  instance_types  = var.nodes_instance_sizes
-  subnet_ids      = data.aws_ssm_parameter.pod_subnets[*].value
+  node_group_name = aws_eks_cluster.main.id
+
+  node_role_arn = aws_iam_role.eks_nodes_role.arn
+
+  instance_types = var.nodes_instance_sizes
+
+  subnet_ids = data.aws_ssm_parameter.pod_subnets[*].value
 
   scaling_config {
     desired_size = lookup(var.auto_scale_options, "desired")
@@ -15,18 +19,12 @@ resource "aws_eks_node_group" "main" {
     "ingress/ready" = "true"
   }
 
-  capacity_type = "ON_DEMAND"
-
   tags = {
     "kubernetes.io/cluster/${var.project_name}" = "owned"
-    Owner                                       = "ZEE8CA"
-    "capacity/os"                               = "AMAZON_LINUX"
-    "capacity/arch"                             = "x86_64"
-    "capacity/type"                             = "ON_DEMAND"
   }
 
   depends_on = [
-    #kubernetes_config_map.aws-auth,
+    # kubernetes_config_map.aws-auth
     aws_eks_access_entry.nodes
   ]
 
