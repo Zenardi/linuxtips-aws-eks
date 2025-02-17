@@ -77,3 +77,11 @@ variable "karpenter_capacity" {
     availability_zones = list(string)
   }))
 }
+
+variable "dns_name" {
+  default = "*.mydoman.com"
+}
+
+variable "route53_hosted_zone" {
+  default = "<AWS_HOSTED_ZONE_ID_HERE>"
+}
