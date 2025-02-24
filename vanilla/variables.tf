@@ -85,3 +85,35 @@ variable "dns_name" {
 variable "route53_hosted_zone" {
   default = "<AWS_HOSTED_ZONE_ID_HERE>"
 }
+
+# Nginx
+
+variable "nginx_min_replicas" {
+  type    = string
+  default = "3"
+}
+
+variable "nginx_max_replicas" {
+  type    = string
+  default = "60"
+}
+
+variable "nginx_requests_cpu" {
+  type    = string
+  default = "250m"
+}
+
+variable "nginx_requests_memory" {
+  type    = string
+  default = "512Mi"
+}
+
+variable "nginx_limits_cpu" {
+  type    = string
+  default = "500m"
+}
+
+variable "nginx_limits_memory" {
+  type    = string
+  default = "1024Mi"
+}
