@@ -1,6 +1,14 @@
 # linuxtips-curso-containers-aws-eks-vanilla
 Repositório do cluster minimo de EKS do curso
 
+# Desafios
+1. Tente realizar a Persistência de dados do Grafana e do Prometheus com o S3-CSI
+2. Configure o Autoscaling dos pods do Grafana
+3. Implemente o "Alert Manager" do kube-prometheus-stack com as mesmas condições, ou melhores, das que vimos em aula.
+4. Tente subir o prometheus em fargate profiles
+5. Segregar o capacity via Node Groups sem Karpenter
+6. Setar requests e limits dos pods do prometheus server
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
