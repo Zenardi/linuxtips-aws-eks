@@ -65,6 +65,25 @@ variable "addon_kubeproxy_version" {
   description = "Versão do Addon do Kube-Proxy"
 }
 
+variable "addon_pod_identity_version" {
+  type        = string
+  default     = "v1.3.4-eksbuild.1"
+  description = "Versão do Addon do Pod Identity"
+}
+
+variable "addon_efs_csi_version" {
+  type        = string
+  default     = "v2.1.4-eksbuild.1"
+  description = "Versão do Addon do EFS CSI"
+
+}
+
+variable "grafana_host" {
+  type        = string
+  default     = "grafana.zenardi.com.br"
+  description = "Host do Grafana"
+}
+
 variable "karpenter_capacity" {
   type = list(object({
     name               = string
@@ -79,11 +98,13 @@ variable "karpenter_capacity" {
 }
 
 variable "dns_name" {
-  default = "*.mydoman.com"
+  type    = string
+  default = "*.zenardi.com.br"
 }
 
 variable "route53_hosted_zone" {
-  default = "<AWS_HOSTED_ZONE_ID_HERE>"
+  type    = string
+  default = "Z102505525LUE9SZ7HWTY"
 }
 
 # Nginx

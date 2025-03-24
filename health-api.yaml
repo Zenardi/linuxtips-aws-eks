@@ -15,7 +15,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: health.msfidelis.com.br
+    - host: health.zenardi.com.br
       http:
         paths:
           - pathType: Prefix
