@@ -19,7 +19,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "chip.msfidelis.com.br" 
+    - "chip.zenardi.com.br" 
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -29,7 +29,7 @@ metadata:
 spec:
   hosts:
   - "chip.chip.svc.cluster.local"
-  - "chip.msfidelis.com.br"
+  - "chip.zenardi.com.br"
   gateways:
   - chip
   http:
