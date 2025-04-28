@@ -173,3 +173,11 @@ variable "argo_rollouts_host" {
   default     = "argo-rollouts.zenardi.com.br"
   description = "Host do Argo Rollouts"
 }
+
+// ArgoCD
+
+variable "argocd_host" {
+  type        = string
+  default     = "argocd.zenardi.com.br"
+  description = "Host do ArgoCD"
+}
